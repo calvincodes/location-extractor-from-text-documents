@@ -4,7 +4,6 @@ whitelisted_words = ["new york"]
 
 # TODO: Add all relevant rules here for creation of feature vector
 def convert_example_to_feature_vector(word_list, example):
-
     feature_vector = []
 
     example_index = example[0]
@@ -14,7 +13,7 @@ def convert_example_to_feature_vector(word_list, example):
     next_word_index = example_index + 1
     next_next_word_index = example_index + 2
 
-    # TODO: As you add more features here, also update the dataframe_converter script
+    # TODO: As you add more features (/rules) here, also update the data_frame_converter.py and constants.py scripts
 
     # at <location>
     if prev_word_index >= 0 and word_list[prev_word_index].lower() == 'at':
@@ -24,8 +23,8 @@ def convert_example_to_feature_vector(word_list, example):
 
     # of the <location>
     if prev_word_index >= 0 and prev_prev_word_index >= 0 \
-        and word_list[prev_prev_word_index].lower() == 'of' \
-        and word_list[prev_word_index].lower() == 'the':
+            and word_list[prev_prev_word_index].lower() == 'of' \
+            and word_list[prev_word_index].lower() == 'the':
         feature_vector.append(1)
     else:
         feature_vector.append(0)
@@ -40,7 +39,6 @@ def convert_example_to_feature_vector(word_list, example):
 
 
 def convert_examples_to_feature_vectors(word_list, examples):
-
     positive_feature_vectors = []
     negative_feature_vectors = []
     for i in range(0, len(examples.positive)):
