@@ -33,7 +33,7 @@ def train_all_models(global_data_frames):
     linear_regression_classifier = LinearRegression()
     linear_regression_classifier_scores = cross_val_score(
         linear_regression_classifier, data_frame[features], data_frame['Class'], cv=10, scoring='roc_auc')
-    print("linear_regression_classifier_scores = " + sum(linear_regression_classifier_scores) / 10)
+    print("linear_regression_classifier_scores = " + str(sum(linear_regression_classifier_scores) / 10))
 
     logistic_regression_classifier = LogisticRegression()
     logistic_regression_classifier_scores = cross_val_score(

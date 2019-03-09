@@ -10,23 +10,27 @@ dirname = os.path.dirname(__file__)
 
 global_data_frames = []
 
-for file_no in [318, 325, 297, 335, 163, 124]:
+for file_no in range(117, 370):
 
-    # Step 1: Read the file and create a list of all words in the file.
+    # Step 1: Create absolute path for the file and check if the file exists.
     filename = os.path.join(dirname, data_set_directory+str(file_no)+".txt")
+    if not os.path.isfile(filename):
+        continue
+
+    # Step 2: Read the file and create a list of all words in the file.
     word_list = read_file(filename)
 
-    # Step 2: Generate both positive and negative, uni-gram and bi-gram examples from the dataset.
+    # Step 3: Generate both positive and negative, uni-gram and bi-gram examples from the dataset.
     examples = generate_examples(word_list)
 
-    # Step 3: Convert the examples into feature vectors.
+    # Step 4: Convert the examples into feature vectors.
     positive_feature_vectors, negative_feature_vectors = convert_examples_to_feature_vectors(word_list, examples)
 
-    # Step 4: Convert the feature vectors into panda DataFrames which can be fed to sci-kit.
+    # Step 5: Convert the feature vectors into panda DataFrames which can be fed to sci-kit.
     positive_data_frames = generate_data_frame(examples.positive, positive_feature_vectors, 1)
     negative_data_frames = generate_data_frame(examples.negative, negative_feature_vectors, 0)
 
-    # Step 5: Add all data_frames to a common global data_frame list.
+    # Step 6: Add all data_frames to a common global data_frame list.
     global_data_frames.extend(positive_data_frames)
     global_data_frames.extend(negative_data_frames)
 
