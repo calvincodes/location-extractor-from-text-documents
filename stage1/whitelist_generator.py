@@ -33,6 +33,8 @@ for file_no in range(117, 370):
                 extracted_word = re.sub('<[^>]*>|[^a-zA-Z\d\s:]', '', word)
                 whitelist_set.add(extracted_word)
                 total_locations.append(extracted_word)
+                print(str(word_list[i-2:i+1]) + " " + str(file_no))
+
             else:
                 # If the label spans across multiple words, like <loc>United States of America</loc>.
                 # Iterate till we find the closing tag.
