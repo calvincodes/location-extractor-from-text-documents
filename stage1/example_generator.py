@@ -15,7 +15,9 @@ def generate_examples(word_list):
 
     for i, word in enumerate(word_list):
 
-        # word = re.sub("\'s", "", word)  # We should NOT be needing this. We have not tagged this.
+        # TODO: Remove this commented redundant code post confirmation.
+        # We should NOT be needing these. We have not tagged this.
+        # word = re.sub("\'s", "", word)
         # word = re.sub("\’s", "", word)
 
         # As "loc" can commonly occur even in normal words like al'loc'ation, hence checking for presence of <loc>
@@ -37,6 +39,7 @@ def generate_examples(word_list):
                             word_list[x] = "__"
                         break
         else:
+            # **************** Create uni-gram examples ****************
             # Only the words with first letter upper, and not in the rule list will be used for uni-gram formation.
             # The formation of bi-gram will be on the basis of the second word. If second word is not loc
             # and is not a rule word, then the bi-gram is created.
@@ -46,12 +49,15 @@ def generate_examples(word_list):
                 # Adding probabilistic pickup to ensure negatives do not overshoot positives by a significant number
                 if random.random() < 0.12:
                     examples.negative.append([i, word])
-                # temp2 = word_list[i + 1] if i < len(
-                #     word_list) - 1 else "__"  # If condition to define temp2, depending on current word is last or not.
-                # if temp2.lower() not in stupid_words and 'carMake' not in temp2 and not (
-                # any(ch.isdigit() for ch in temp2)):
-                #     if random.random() < 1:  # USELESS IF STATEMENT. This is always true.
-                #         neg_examples.append([i, word + " " + temp2])
+
+                # **************** Create bi-gram examples ****************
+                # If condition to define next_word, depending on current word is last or not.
+                next_word = word_list[i + 1] if i < len(word_list) - 1 else "__"
+                if next_word.lower() not in blacklisted_rule_words \
+                        and '<loc>' not in next_word \
+                        and not (any(ch.isdigit() for ch in next_word)):
+                    if random.random() < 0.1:
+                        examples.negative.append([i, word + " " + next_word])
 
     return examples
 
