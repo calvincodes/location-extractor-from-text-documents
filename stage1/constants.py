@@ -1,6 +1,9 @@
 # TODO: Update labels as you add more features
 labels = ['Word', 'F1', 'F2', 'F3', 'Class']
 
+neighboring_words = ['over', 'around', 'to', 'from', 'at', 'in', 'between', 'the',
+                     'of', 'where', 'with', 'when', 'and', 'outside']
+
 # TODO: UPDATE THIS LIST OF BLACKLISTED RULE WORDS
 blacklisted_rule_words = \
     ['a', 'an', 'the', 'have', 'has', 'been', 'was', 'is', 'by', 'to', 'at', 'for', 'in', 'of', 'from', 'like', 'with',
