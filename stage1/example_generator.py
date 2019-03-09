@@ -31,7 +31,7 @@ def generate_examples(word_list):
                     if word_list[tag_closing_index].count("</loc>") == 1:
                         tagged_substring_list = word_list[i:tag_closing_index+1]
                         tagged_substring = ''.join(str(e + " ") for e in tagged_substring_list)
-                        extracted_word = re.sub('<[^>]*>', '', tagged_substring)
+                        extracted_word = re.sub('<[^>]*>', '', tagged_substring).strip()
                         examples.positive.append([i, extracted_word])
                         for x in range(i+1, tag_closing_index+1):
                             word_list[x] = "__"
