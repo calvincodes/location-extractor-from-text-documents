@@ -1,5 +1,4 @@
-# TODO: UPDATE WHITELISTED WORDS BY RUNNING A SCRIPT TO FETCH ALL LOCATIONS.
-whitelisted_words = ["new york"]
+from constants import whitelisted_words
 
 
 # TODO: Add all relevant rules here for creation of feature vector

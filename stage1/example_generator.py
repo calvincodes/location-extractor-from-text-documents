@@ -1,12 +1,7 @@
 import re
 import random
 from examples import Examples
-
-# TODO: UPDATE THIS LIST OF BLACKLISTED RULE WORDS
-blacklisted_rule_words = \
-    ['a', 'an', 'the', 'have', 'has', 'been', 'was', 'is', 'by', 'to', 'at', 'for', 'in', 'of', 'from', 'like', 'with',
-     'were', 'are', 'what', 'where', 'how', 'why', 'who', 'it', "it's", 'and', 'but', 'on', "its", 'we', 'our', 'over',
-     'under', "about", "upon", "these", "those", "this", "that", "i", "they", "them"]
+from constants import blacklisted_rule_words
 
 
 def generate_examples(word_list):
@@ -24,7 +19,7 @@ def generate_examples(word_list):
         if '<loc>' in word:
             # For the same reason as above, explicitly checking for one occurrence of both opening and closing tags.
             if word.count("<loc>") == 1 and word.count("</loc>") == 1:
-                extracted_word = re.sub('<[^>]*>', '', word)
+                extracted_word = re.sub('<[^>]*>|[^a-zA-Z\d\s:]', '', word)
                 examples.positive.append([i, extracted_word])
             else:
                 # If the label spans across multiple words, like <loc>United States of America</loc>.
@@ -33,7 +28,7 @@ def generate_examples(word_list):
                     if word_list[tag_closing_index].count("</loc>") == 1:
                         tagged_substring_list = word_list[i:tag_closing_index+1]
                         tagged_substring = ''.join(str(e + " ") for e in tagged_substring_list)
-                        extracted_word = re.sub('<[^>]*>', '', tagged_substring).strip()
+                        extracted_word = re.sub('<[^>]*>|[^a-zA-Z\d\s:]', '', tagged_substring).strip()
                         examples.positive.append([i, extracted_word])
                         for x in range(i+1, tag_closing_index+1):
                             word_list[x] = "__"

@@ -15,9 +15,9 @@ def train_all_models(global_data_frames):
     data_frame = pandas.DataFrame.from_records(global_data_frames, columns=labels)
     features = data_frame.columns[1:len(labels)]
 
-    decision_tree_cassifier = DecisionTreeClassifier()
+    decision_tree_classifier = DecisionTreeClassifier()
     decision_tree_scores = cross_val_score(
-        decision_tree_cassifier, data_frame[features], data_frame['Class'], cv=10, scoring='roc_auc')
+        decision_tree_classifier, data_frame[features], data_frame['Class'], cv=10, scoring='roc_auc')
     print("decision_tree_scores = " + str(sum(decision_tree_scores) / 10))
 
     random_forrest_classifier = RandomForestClassifier(n_jobs=2, random_state=0)
