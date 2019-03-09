@@ -9,4 +9,5 @@ def read_file(filename):
     sanitized_word_list = [word.strip(" .,;:()") for word in raw_data_list]
     # Remove all occurrences of empty words from list
     sanitized_word_list = list(filter(lambda word: word != '', sanitized_word_list))
+    stream.close()
     return sanitized_word_list

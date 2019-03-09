@@ -47,6 +47,8 @@ def generate_examples(word_list):
                     and word.lower() not in blacklisted_rule_words \
                     and not (any(ch.isdigit() for ch in word)):
                 # Adding probabilistic pickup to ensure negatives do not overshoot positives by a significant number
+                # FIXME: Note that this will result in changing the training data in every run of the model.
+                # FIXME: I am NON-DETERMINISTIC
                 if random.random() < 0.12:
                     examples.negative.append([i, word])
 
@@ -56,6 +58,8 @@ def generate_examples(word_list):
                 if next_word.lower() not in blacklisted_rule_words \
                         and '<loc>' not in next_word \
                         and not (any(ch.isdigit() for ch in next_word)):
+                    # FIXME: Note that this will result in changing the training data in every run of the model.
+                    # FIXME: I am NON-DETERMINISTIC
                     if random.random() < 0.1:
                         examples.negative.append([i, word + " " + next_word])
 
