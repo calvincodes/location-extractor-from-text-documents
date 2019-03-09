@@ -3,6 +3,7 @@ from input_reader import read_file
 from example_generator import generate_examples
 from feature_vector_converter import convert_examples_to_feature_vectors
 from data_frame_converter import generate_data_frame
+from scikit_helper import train_all_models
 
 data_set_directory = 'all_labelled_data_set/'
 dirname = os.path.dirname(__file__)
@@ -28,5 +29,5 @@ for file_no in [318, 325, 297, 335, 163, 124]:
     # Step 5: Add all data_frames to a common global data_frame list.
     global_data_frames.extend(positive_data_frames)
     global_data_frames.extend(negative_data_frames)
-    print(str(examples.positive))
 
+train_all_models(global_data_frames)
