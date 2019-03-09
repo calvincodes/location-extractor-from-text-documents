@@ -14,6 +14,8 @@ def convert_example_to_feature_vector(word_list, example):
     next_word_index = example_index + 1
     next_next_word_index = example_index + 2
 
+    # TODO: As you add more features here, also update the dataframe_converter script
+
     # at <location>
     if prev_word_index >= 0 and word_list[prev_word_index].lower() == 'at':
         feature_vector.append(1)
@@ -39,9 +41,10 @@ def convert_example_to_feature_vector(word_list, example):
 
 def convert_examples_to_feature_vectors(word_list, examples):
 
-    feature_vectors = []
+    positive_feature_vectors = []
+    negative_feature_vectors = []
     for i in range(0, len(examples.positive)):
-        feature_vectors.append(convert_example_to_feature_vector(word_list, examples.positive[i]))
+        positive_feature_vectors.append(convert_example_to_feature_vector(word_list, examples.positive[i]))
     for i in range(0, len(examples.negative)):
-        feature_vectors.append(convert_example_to_feature_vector(word_list, examples.negative[i]))
-    return feature_vectors
+        negative_feature_vectors.append(convert_example_to_feature_vector(word_list, examples.negative[i]))
+    return positive_feature_vectors, negative_feature_vectors
