@@ -17,9 +17,7 @@ all_negative_examples = []  # Used only for debugging purpose
 
 pos_count = 0
 
-# for file_no in range(154):
-for file_no in range(111, 370):
-# for file_no in range(360, 370):
+for file_no in range(111, 422):
     # Step 1: Create absolute path for the file and check if the file exists.
     filename = os.path.join(dirname, data_set_directory+str(file_no)+".txt")
     if not os.path.isfile(filename):
@@ -86,8 +84,9 @@ for file_no in range(0, 110):
     global_test_data_frames.extend(negative_data_frames)
 
 
-print("Positive cases = " + str(len(all_positive_examples)))
-print("Negative cases = " + str(len(all_negative_examples)))
+print("Positive cases for train = " + str(len(all_positive_examples)))
+print("Negative cases for train = " + str(len(all_negative_examples)))
 print("Positive cases for test = " + str(len(test_positive_examples)))
 print("Negative cases for test = " + str(len(test_negative_examples)))
+
 train_all_models(global_data_frames, global_test_data_frames)

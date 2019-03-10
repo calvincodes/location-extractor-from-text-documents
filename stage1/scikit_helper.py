@@ -7,7 +7,6 @@ from sklearn.model_selection import cross_val_score
 from sklearn.tree import DecisionTreeClassifier
 import numpy as np
 from constants import labels
-from sklearn.metrics import classification_report, confusion_matrix
 import pandas
 import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)

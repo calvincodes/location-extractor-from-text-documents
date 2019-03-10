@@ -108,6 +108,9 @@ def convert_example_to_feature_vector(word_list, example):
     else: feature_vector.append(0)
 
 
+    # Add a rule for all words UPPER CASE.
+
+
     return feature_vector
 
 
