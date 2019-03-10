@@ -1,5 +1,5 @@
 # TODO: Update labels as you add more features
-labels = ['Word', 'F1', 'F2', 'F3', 'Class']
+labels = ['Word', 'F1', 'F2', 'F3', 'F4', 'F5','F6', 'F7','F8', 'Class']
 
 neighboring_verbs_for_negative_examples = ['has', 'have', 'had', 'was', 'were', 'with', 'would', 'sea',
                                            'of', 'times', 'post', 'against', 'should', 'will', 'wont',

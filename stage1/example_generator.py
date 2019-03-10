@@ -4,8 +4,8 @@ from examples import Examples
 from constants import blacklisted_rule_words, whitelisted_words, neighboring_verbs_for_negative_examples
 from nltk.corpus import wordnet as wn
 
-
-
+positive_feature_vector = []
+negative_feature_vector = []
 
 def generate_examples(word_list):
 
@@ -56,8 +56,6 @@ def generate_examples(word_list):
                     examples.negative.append([i, word + " " + word_list[i+1]])
                 elif i < len(word_list)-2 and  wn.synsets(word_list[i+2]):
                     examples.negative.append([i, word + " " + word_list[i+1]])
-
-
 
 
             # if word[0].isupper() and word.lower() not in blacklisted_rule_words and not (any(ch.isdigit() for ch in word)):
