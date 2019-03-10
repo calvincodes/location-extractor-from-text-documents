@@ -6,6 +6,7 @@ from nltk.corpus import wordnet as wn
 
 
 
+
 def generate_examples(word_list):
 
     lowered_whitelisted_words = [x.lower() for x in whitelisted_words]
@@ -46,6 +47,7 @@ def generate_examples(word_list):
             #     next_word = word_list[i + 1] if i < len(word_list) - 1 else "__"
             #     if '<loc>' not in next_word:
             #         examples.negative.append([i, word + " " + next_word])
+
             # print(i)
             # print(len(word_list) - 1)
             if i < len(word_list)-1 and word.lower() in lowered_whitelisted_words and word[0].isupper():
@@ -55,7 +57,11 @@ def generate_examples(word_list):
                 elif i < len(word_list)-2 and  wn.synsets(word_list[i+2]):
                     examples.negative.append([i, word + " " + word_list[i+1]])
 
-            # if word[0].isupper() and word.lower() not in stupid_words and not (any(ch.isdigit() for ch in word)):
+
+
+
+            # if word[0].isupper() and word.lower() not in blacklisted_rule_words and not (any(ch.isdigit() for ch in word)):
+            #     examples.negative.append([i, word])
 
             if word[0].isupper() and word.lower() in lowered_whitelisted_words:
                 prev_prev_word = word_list[i - 2] if i > 0 else "__"
