@@ -11,7 +11,8 @@ neighboring_words = ['over', 'around', 'to', 'from', 'at', 'in', 'between', 'the
 
 # TODO: UPDATE THIS LIST OF BLACKLISTED RULE WORDS
 blacklisted_rule_words = \
-    ['a', 'an', 'the', 'have', 'has', 'been', 'was', 'is', 'by', 'to', 'at', 'for', 'in', 'of', 'from', 'like', 'with',
+    ['Mr.', 'May', 'American', 'Indian',
+        'a', 'an', 'the', 'have', 'has', 'been', 'was', 'is', 'by', 'to', 'at', 'for', 'in', 'of', 'from', 'like', 'with',
      'were', 'are', 'what', 'where', 'how', 'why', 'who', 'it', "it's", 'and', 'but', 'on', "its", 'we', 'our', 'over',
      'under', "about", "upon", "these", "those", "this", "that", "i", "they", "them"]
 
