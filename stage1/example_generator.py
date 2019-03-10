@@ -1,7 +1,7 @@
 import re
 import random
 from examples import Examples
-from constants import blacklisted_rule_words, whitelisted_words, neighboring_verbs_for_negative_examples,blacklist_words
+from constants import neighboring_verbs_for_negative_examples,blacklist_words
 from nltk.corpus import wordnet as wn
 
 positive_feature_vector = []
@@ -9,7 +9,6 @@ negative_feature_vector = []
 
 def generate_examples(word_list):
 
-    lowered_whitelisted_words = [x.lower() for x in whitelisted_words]
     lowered_blacklisted_words = [x.lower() for x in blacklist_words]
     examples = Examples()
 
