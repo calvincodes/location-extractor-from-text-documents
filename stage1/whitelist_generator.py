@@ -3,7 +3,7 @@ from input_reader import read_file
 import re
 
 
-data_set_directory = 'all_labelled_data_set/'
+data_set_directory = 'data_set/'
 dirname = os.path.dirname(__file__)
 
 total_locations = [""]
