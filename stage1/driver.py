@@ -3,7 +3,8 @@ from input_reader import read_file
 from example_generator import generate_examples
 from feature_vector_converter import convert_examples_to_feature_vectors
 from data_frame_converter import generate_data_frame
-from scikit_helper import train_all_models
+from scikit_helper import run_training_phase
+from scikit_helper import run_testing_phase
 
 data_set_directory = 'all_labelled_data_set/'
 dirname = os.path.dirname(__file__)
@@ -69,4 +70,5 @@ print("Negative cases for train = " + str(len(train_negative_examples)))
 print("Positive cases for test = " + str(len(test_positive_examples)))
 print("Negative cases for test = " + str(len(test_negative_examples)))
 
-train_all_models(global_data_frames, global_test_data_frames)
+run_training_phase(global_data_frames)
+run_testing_phase(global_test_data_frames)
