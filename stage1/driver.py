@@ -18,7 +18,7 @@ all_negative_examples = []  # Used only for debugging purpose
 pos_count = 0
 
 # for file_no in range(154):
-for file_no in range(200, 370):
+for file_no in range(111, 370):
 # for file_no in range(360, 370):
     # Step 1: Create absolute path for the file and check if the file exists.
     filename = os.path.join(dirname, data_set_directory+str(file_no)+".txt")
@@ -51,7 +51,7 @@ for file_no in range(200, 370):
     global_data_frames.extend(negative_data_frames)
 
 
-for file_no in range(117, 200):
+for file_no in range(0, 110):
     filename = os.path.join(dirname, data_set_directory + str(file_no) + ".txt")
     if not os.path.isfile(filename):
         continue
