@@ -6,7 +6,7 @@ from data_frame_converter import generate_data_frame
 from scikit_helper import run_training_phase
 from scikit_helper import run_testing_phase
 
-data_set_directory = 'all_labelled_data_set/'
+data_set_directory = 'data_set/'
 dirname = os.path.dirname(__file__)
 
 train_data_range = range(111, 422)
@@ -65,10 +65,12 @@ def read_and_process_data(data_type):
 read_and_process_data('train')
 read_and_process_data('test')
 
-print("Positive cases for train = " + str(len(train_positive_examples)))
-print("Negative cases for train = " + str(len(train_negative_examples)))
-print("Positive cases for test = " + str(len(test_positive_examples)))
-print("Negative cases for test = " + str(len(test_negative_examples)))
+print("************************ Training Examples *******************************")
+print("Positive examples for TRAIN = " + str(len(train_positive_examples)))
+print("Negative examples for TRAIN = " + str(len(train_negative_examples)))
+print("\n************************ Training Examples *******************************")
+print("Positive examples for TEST = " + str(len(test_positive_examples)))
+print("Negative examples for TEST = " + str(len(test_negative_examples)))
 
 run_training_phase(global_data_frames)
 run_testing_phase(global_test_data_frames)
