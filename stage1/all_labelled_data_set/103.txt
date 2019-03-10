@@ -1,1 +1,29 @@
-As it happens, Donald J. Trump is not the only person to announce plans to shut down a personal philanthropy, just the best known. This is the story of a man who made and kept that same promise. Nearly five years ago, Charles F. Feeney sat in a cushy armchair in an apartment on the east side of Manhattan, grandchildren’s artwork taped to the walls, and said that by the end of 2016, he was going to hand out the last of a great fortune that he had made. It was a race: Mr. Feeney was then 81, and Atlantic Philanthropies, a collection of private foundations he had started and funded, still had about $1. 5 billion left. Flinging money out the window or writing checks   was not Mr. Feeney’s way. Last month, Mr. Feeney and Atlantic completed the sprint and made a final grant, $7 million to Cornell University, to support students doing community service work. He had officially emptied his pockets, meeting his aspiration of “giving while living. ” Altogether, he had contributed $8 billion to his philanthropies, which have supported higher education, public health, human rights and scientific research. “You’re always nervous handling so much money, but we seem to have worked it pretty well,” Mr. Feeney, now 85, said last week in a phone interview. His remaining personal net worth is slightly more than $2 million. That’s not quite broke, by any standard, but it is a modest amount for a man who controlled thousands of times as much wealth. He and his wife, Helga, now live in a rented apartment in San Francisco. “You can only wear one pair of pants at a time,” Mr. Feeney has said. Until he was 75, he traveled only in coach, and carried reading materials in a plastic bag. For many years, when in New York, he had lunch not at the city’s luxury restaurants, but in the homey confines of Tommy Makem’s Irish Pavilion on East 57th Street, where he ate the burgers. None of the major American philanthropists have given away a greater proportion of their wealth, an
+As it happens, Donald J. Trump is not the only person to
+announce plans to shut down a personal philanthropy, just
+the best known. This is the story of a man who made and kept
+ that same promise. Nearly five years ago, Charles F. Feeney
+  sat in a cushy armchair in an apartment on the east side
+  of <loc>Manhattan</loc>, grandchildren’s artwork taped to
+  the walls, and said that by the end of 2016, he was going
+  to hand out the last of a great fortune that he had made.
+  It was a race: Mr. Feeney was then 81, and Atlantic
+  Philanthropies, a collection of private foundations he had
+   started and funded, still had about $1. 5 billion left.
+   Flinging money out the window or writing checks   was not
+    Mr. Feeney’s way. Last month, Mr. Feeney and Atlantic
+    completed the sprint and made a final grant, $7 million
+    to Cornell University, to support students doing
+    community service work. He had officially emptied his
+    pockets, meeting his aspiration of “giving while living.
+     ” Altogether, he had contributed $8 billion to his
+     philanthropies, which have supported higher education,
+     public health, human rights and scientific research.
+     “You’re always nervous handling so much money, but we
+     seem to have worked it pretty well,” Mr. Feeney, now
+     85, said last week in a phone interview. His remaining
+     personal net worth is slightly more than $2 million.
+     That’s not quite broke, by any standard, but it is a
+     modest amount for a man who controlled thousands of
+     times as much wealth. He and his wife, Helga, now live
+     in a rented apartment in <loc>San Francisco</loc>. “You
+      can only wear one pair of pants at a time,” Mr. Feeney has said. Until he was 75, he traveled only in coach, and carried reading materials in a plastic bag. For many years, when in <loc>New York</loc>, he had lunch not at the city’s luxury restaurants, but in the homey confines of Tommy Makem’s Irish Pavilion on East 57th Street, where he ate the burgers.
