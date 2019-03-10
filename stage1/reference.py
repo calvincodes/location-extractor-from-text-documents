@@ -239,6 +239,7 @@ stupid_words = ['a','an','the','have','has','been','was','is','by','to','at','fo
                 'are','what','where','how','why','who','it',"it's",'and','but','on',"its",'we','our','over',
                'under',"about","upon","these","those","this","that","i","they","them"]
 testDataList = []
+
 for j in range(1,111):
     if True :
         fileIndex = str(j).zfill(3)

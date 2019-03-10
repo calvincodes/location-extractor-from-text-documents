@@ -1,9 +1,20 @@
 # TODO: Update labels as you add more features
-labels = ['Word', 'F1', 'F2', 'F3', 'Class']
+labels = ['Word', 'F1', 'F2', 'F3', 'F4', 'F5','F6', 'F7','F8','F9', 'Class']
+
+neighboring_verbs_for_negative_examples = ['has', 'have', 'had', 'was', 'were', 'with', 'would', 'sea',
+                                           'of', 'times', 'post', 'against', 'should', 'will', 'wont',
+                                           'not', 'do', 'does']
+
+
+neighboring_words = ['over', 'around', 'to', 'from', 'at', 'in', 'between', 'the',
+                     'of', 'where', 'with', 'when', 'and', 'outside']
+
+blacklist_words = ['january', 'february', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
 # TODO: UPDATE THIS LIST OF BLACKLISTED RULE WORDS
 blacklisted_rule_words = \
-    ['a', 'an', 'the', 'have', 'has', 'been', 'was', 'is', 'by', 'to', 'at', 'for', 'in', 'of', 'from', 'like', 'with',
+    ['Mr.', 'May', 'American', 'Indian',
+        'a', 'an', 'the', 'have', 'has', 'been', 'was', 'is', 'by', 'to', 'at', 'for', 'in', 'of', 'from', 'like', 'with',
      'were', 'are', 'what', 'where', 'how', 'why', 'who', 'it', "it's", 'and', 'but', 'on', "its", 'we', 'our', 'over',
      'under', "about", "upon", "these", "those", "this", "that", "i", "they", "them"]
 
@@ -11,13 +22,13 @@ blacklisted_rule_words = \
 whitelisted_words = []
 # whitelisted_words = ['Momofuku Nishi', 'Berlin', 'Hong Kong', 'Asia', 'Paraba', 'Afghanistan', 'JERUSALEM', 'So Paulo',
 #                      'San Diego', 'TEHRAN', 'Capitol Hill', 'East Jerusalem', 'Libya', 'Zhejiang', 'Kuwait',
-#                      'Westchester', 'Manhattan', 'Shandong', 'American', 'Maale Adumim', 'Vancouver Island', 'Qum',
+#                      'Westchester', 'Manhattan', 'Shandong', 'Maale Adumim', 'Vancouver Island', 'Qum',
 #                      'India', 'Manchester', 'Fort Lauderdale', 'Bamberton', 'Roraima', 'Tokyo', 'Bellevue', 'Seattle',
 #                      'Havana', 'RIO DE JANEIRO', 'Sweden', 'LONDON', 'San Francisco', 'Columbus', 'Banff', 'Brazil',
 #                      'Dakar', 'California', 'Hollywood', 'ISTANBUL', 'South Carolina', 'Boa Vista', 'Kenya',
 #                      'Guantnamo Bay', 'JIUQUAN', 'Syria', 'Linyi', 'LOS ANGELES', 'Alaska', 'Toronto', 'HAVANA',
 #                      'Lashkar Gah', 'central New York', 'Haifa', 'Las Vegas', 'Lesbos', 'Long Island',
-#                      'Azerbaijan', 'England', 'Helmand', 'SAN FRANCISCO', 'Disney World', 'Netherlands',
+#                      'Azerbaijan', 'England', 'Helmand', 'SAN','FRANCISCO','SAN FRANCISCO', 'Disney World', 'Netherlands',
 #                      'Buchanan', 'Ankara', 'Bronx', 'U S', 'Australia', 'Baltimore', 'Gansu', 'Norwalk', 'Jiuquan',
 #                      'Saudi Arabia', 'Sierra Nevada', 'Arizona', 'Brussels', 'Washington', 'Hawthorne', 'PARIS',
 #                      'White Plains', 'Gothenburg', 'Istanbul', 'Louisiana', 'HONG KONG', 'Greece', 'Izmir', 'Nashville',
@@ -27,7 +38,7 @@ whitelisted_words = []
 #                      'WASHINGTON', 'China', 'Westbury', 'Kunduz', 'Canada', 'Natal', 'Monmouth', 'Colorado',
 #                      'White House', 'Dallas', 'FORT LAUDERDALE', 'Katowice', 'Kansas City', 'Matamoros', 'Gainesville',
 #                      'New York City', 'Indonesia', 'Paris', 'CHICAGO', 'Central America', 'London',
-#                      'Eastern United States', 'Sandringham', 'Sochi', 'Tennessee', 'Davos', 'Jerusalem',
+#                      'Eastern United States','United','States', 'Sandringham', 'Sochi', 'Tennessee', 'Davos', 'Jerusalem',
 #                      'Switzerland', 'Strait of Hormuz', 'Yemen', 'White House', 'North Africa', 'New York',
 #                      'Brooklyn', 'northeastern Brazil', 'Miami', 'BEVERLY HILLS', 'New Delhi', 'Philadelphia',
 #                      'United States', 'KABUL', 'Britain', 'Chengdu', 'Jalisco', 'Massachusetts', 'Europe', 'DUBLIN',
@@ -46,3 +57,5 @@ whitelisted_words = []
 #                      'Takata', 'Connecticut', 'Kentucky', 'La Jolla', 'Kansas', 'Beijing', 'New Jersey', 'Idaho',
 #                      'ROSWELL', 'Richmond', 'Vietnam', 'Boston', 'SEOUL', 'Senegal', 'Oxford', 'N Y', 'Tehran',
 #                      'HOUSTON', 'Southern California', 'Chad', 'Carol City']
+
+
