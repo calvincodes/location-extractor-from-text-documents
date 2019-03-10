@@ -3,8 +3,7 @@ import random
 from examples import Examples
 from constants import blacklisted_rule_words, whitelisted_words, neighboring_verbs_for_negative_examples
 from nltk.corpus import wordnet as wn
-import nltk
-nltk.download('wordnet')
+
 
 
 def generate_examples(word_list):
@@ -47,9 +46,14 @@ def generate_examples(word_list):
             #     next_word = word_list[i + 1] if i < len(word_list) - 1 else "__"
             #     if '<loc>' not in next_word:
             #         examples.negative.append([i, word + " " + next_word])
-
-            if i < len(word_list)-1 and wn.sysnsets(word_list[i+1])[0].pos() == 'v':
-                examples.negative.append(i, word + " " + word_list[i+1])
+            # print(i)
+            # print(len(word_list) - 1)
+            if i < len(word_list)-1 and word.lower() in lowered_whitelisted_words and word[0].isupper():
+                dict = wn.synsets(word_list[i+1])
+                if(len(dict) > 0 and dict[0].pos() == 'v'):
+                    examples.negative.append([i, word + " " + word_list[i+1]])
+                elif i < len(word_list)-2 and  wn.synsets(word_list[i+2]):
+                    examples.negative.append([i, word + " " + word_list[i+1]])
 
             # if word[0].isupper() and word.lower() not in stupid_words and not (any(ch.isdigit() for ch in word)):
 
