@@ -69,7 +69,7 @@ nltk.download('wordnet')  # Attempt to download wordnet corpus.
 read_and_process_data('train')
 read_and_process_data('test')
 
-print("************************ Training Examples *******************************")
+print("\n************************ Training Examples *******************************")
 print("Positive examples for TRAIN = " + str(len(train_positive_examples)))
 print("Negative examples for TRAIN = " + str(len(train_negative_examples)))
 print("\n************************ Training Examples *******************************")
