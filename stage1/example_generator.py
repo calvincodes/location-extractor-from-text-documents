@@ -3,7 +3,6 @@ from examples import Examples
 from constants import blacklist_words
 from nltk.corpus import wordnet as wn
 
-
 positive_feature_vector = []
 negative_feature_vector = []
 
