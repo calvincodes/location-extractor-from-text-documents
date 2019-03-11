@@ -1,5 +1,4 @@
-# Location Extractor from Text
-### [Project Page](https://sites.google.com/view/data-science-project/home)
+# [Location Extractor from Text](https://sites.google.com/view/data-science-project/home) 
 
 ## Setup & Requirements
 
