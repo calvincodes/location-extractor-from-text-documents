@@ -1,4 +1,4 @@
-# [Location Extractor from Text](https://sites.google.com/view/data-science-project/home)
+# [Location Extractor from Text Documents](https://sites.google.com/view/data-science-project/home)
 
 ## Entity Type
 * Location
