@@ -15,3 +15,9 @@
 ### Negatives
 1. _Brooklyn_ High School
 2. The _United States_ attorney
+
+## Authors
+
+* **[Anshu Verma](https://github.com/anshuv99)**
+* **[Srujana](https://github.com/SrujanaN)**
+* **[Arpit Jain](https://github.com/calvincodes)**
