@@ -42,12 +42,12 @@ def generate_examples(word_list):
             # The formation of bi-gram will be on the basis of the second word. If second word is not loc
             # and is not a rule word, then the bi-gram is created.
             if i < len(word_list) - 1 and word[0].isupper():
-                dict = wn.synsets(word_list[i + 1])
-                if len(dict) > 0 and dict[0].pos() == 'v':
+                dictionary = wn.synsets(word_list[i + 1])
+                if len(dictionary) > 0 and dictionary[0].pos() == 'v':
                     examples.negative.append([i, word + " " + word_list[i + 1]])
                 elif i < len(word_list) - 2:
-                    dict = wn.synsets(word_list[i + 2])
-                    if len(dict) > 0 and dict[0].pos() == 'v':
+                    dictionary = wn.synsets(word_list[i + 2])
+                    if len(dictionary) > 0 and dictionary[0].pos() == 'v':
                         examples.negative.append([i, word + " " + word_list[i + 1] + " " + word_list[i + 2]])
 
             # Handling months like my birthday is in July.
