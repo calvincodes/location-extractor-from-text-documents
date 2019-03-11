@@ -1,6 +1,6 @@
 import sklearn
 
-from sklearn import svm, metrics
+from sklearn import svm
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LinearRegression, LogisticRegression
 from sklearn.metrics import confusion_matrix,  fbeta_score

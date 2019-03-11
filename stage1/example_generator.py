@@ -1,15 +1,13 @@
 import re
-import random
 from examples import Examples
-from constants import blacklisted_rule_words, whitelisted_words, neighboring_verbs_for_negative_examples,blacklist_words
+from constants import blacklist_words
 from nltk.corpus import wordnet as wn
 
 positive_feature_vector = []
 negative_feature_vector = []
 
-def generate_examples(word_list):
 
-    lowered_whitelisted_words = [x.lower() for x in whitelisted_words]
+def generate_examples(word_list):
     lowered_blacklisted_words = [x.lower() for x in blacklist_words]
     examples = Examples()
 
@@ -31,28 +29,29 @@ def generate_examples(word_list):
                 # Iterate till we find the closing tag.
                 for tag_closing_index in range(i, len(word_list)):
                     if word_list[tag_closing_index].count("</loc>") == 1:
-                        tagged_substring_list = word_list[i:tag_closing_index+1]
+                        tagged_substring_list = word_list[i:tag_closing_index + 1]
                         tagged_substring = ''.join(str(e + " ") for e in tagged_substring_list)
                         extracted_word = re.sub('<[^>]*>', '', tagged_substring).strip()
                         examples.positive.append([i, extracted_word])
-                        for x in range(i+1, tag_closing_index+1):
+                        for x in range(i + 1, tag_closing_index + 1):
                             word_list[x] = "__"
                         break
         else:
-            if i < len(word_list) - 1  and word[0].isupper():
-                dict = wn.synsets(word_list[i+1])
-                if(len(dict) > 0 and dict[0].pos() == 'v'):
-                    examples.negative.append([i, word + " " + word_list[i+1]])
-                elif i < len(word_list)-2 :
-                    dict = wn.synsets(word_list[i + 2])
-                    if (len(dict) > 0 and dict[0].pos() == 'v'):
-                        examples.negative.append([i, word + " " + word_list[i+1] + " " + word_list[i+2]])
-
+            # **************** Create uni-gram examples ****************
+            # Only the words with first letter upper, and not in the rule list will be used for uni-gram formation.
+            # The formation of bi-gram will be on the basis of the second word. If second word is not loc
+            # and is not a rule word, then the bi-gram is created.
+            if i < len(word_list) - 1 and word[0].isupper():
+                dictionary = wn.synsets(word_list[i + 1])
+                if len(dictionary) > 0 and dictionary[0].pos() == 'v':
+                    examples.negative.append([i, word + " " + word_list[i + 1]])
+                elif i < len(word_list) - 2:
+                    dictionary = wn.synsets(word_list[i + 2])
+                    if len(dictionary) > 0 and dictionary[0].pos() == 'v':
+                        examples.negative.append([i, word + " " + word_list[i + 1] + " " + word_list[i + 2]])
 
             # Handling months like my birthday is in July.
             if word[0].isupper() and (word in lowered_blacklisted_words or word[0:-1] in lowered_blacklisted_words):
                 examples.negative.append(i)
-
-
 
     return examples

@@ -9,8 +9,8 @@ from scikit_helper import run_testing_phase
 data_set_directory = 'data_set/'
 dirname = os.path.dirname(__file__)
 
-train_data_range = range(111, 422)
-test_data_range = range(0, 110)
+train_data_range = range(0, 422)  # The directory has only 200 files and the code tries to read file only if present.
+test_data_range = range(0, 422)  # The directory has only 100 files and the code tries to read file only if present.
 
 global_data_frames = []
 global_test_data_frames = []
