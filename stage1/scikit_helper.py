@@ -1,8 +1,9 @@
 import sklearn
 
-from sklearn import svm, metrics
+from sklearn import svm
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LinearRegression, LogisticRegression
+from sklearn.metrics import confusion_matrix,  fbeta_score
 from sklearn.model_selection import cross_val_score
 from sklearn.tree import DecisionTreeClassifier
 import numpy as np
@@ -33,7 +34,8 @@ def run_training_phase(global_data_frames):
 
     decision_tree_scores = cross_val_score(
         decision_tree_classifier, data_frame[features], data_frame['Class'], cv=10)
-
+    decision_tree_classifier.fit(data_frame[features],
+                                 data_frame['Class'])
     random_forrest_scores = cross_val_score(
         random_forrest_classifier, data_frame[features], data_frame['Class'], cv=10)
 
@@ -61,7 +63,9 @@ def run_testing_phase(global_test_data_frames):
         sklearn.metrics.precision_score(test_data_frame['Class'], decision_tree_classifier_pred)))
     print(
         "Recall Score = " + str(sklearn.metrics.recall_score(test_data_frame['Class'], decision_tree_classifier_pred)))
-    # CM = confusion_matrix(test_data_frame['Class'], decision_tree_classifier_pred)
+    dTFScore = fbeta_score(test_data_frame['Class'], decision_tree_classifier_pred, beta= 0.5)
+    print("Decision Tree F1 Score = " + str(dTFScore))
+    CM = confusion_matrix(test_data_frame['Class'], decision_tree_classifier_pred)
 
     # Prediction for Random forest
 
@@ -74,6 +78,9 @@ def run_testing_phase(global_test_data_frames):
     print(
         "Recall Score = " + str(sklearn.metrics.recall_score(test_data_frame['Class'],
                                                              random_forest_classifier_pred)))
+    dTFScore = fbeta_score(test_data_frame['Class'],
+                           random_forest_classifier_pred, beta=0.5)
+    print("Random Forest F1 Score = " + str(dTFScore))
 
     # Prediction for SVM classifier score
     print(
@@ -88,6 +95,9 @@ def run_testing_phase(global_test_data_frames):
     print(
         "Recall Score = " + str(sklearn.metrics.recall_score(test_data_frame['Class'],
                                                              svm_pred)))
+    dTFScore = fbeta_score(test_data_frame['Class'],
+                           svm_pred, beta=0.5)
+    print("SVM F1 Score = " + str(dTFScore))
 
     # Prediction for linear regression classifier
 
@@ -102,22 +112,22 @@ def run_testing_phase(global_test_data_frames):
     # Prediction for Logistic regression classifier
 
     print(
-        "\n\n************************Linear Regression Classifier*******************************\n")
+        "\n\n************************Logistic Regression Classifier*******************************\n")
     logistic_regression_classifier.fit(test_data_frame[test_features],
                                        test_data_frame['Class'])
     logistic_regression_pred = logistic_regression_classifier.predict(
         test_data_frame[test_features])
-    print("Linear Regression Classifier scores = " + str(np.mean(
+    print("Logistic Regression Classifier scores = " + str(np.mean(
         logistic_regression_classifier_scores)))
 
     # TN = CM[0][0]
     # FN = CM[1][0]
     # TP = CM[1][1]
     # FP = CM[0][1]
-
+    #
     # print("False positive " + str(FP))
     # print("False negative " + str(FN))
-
+    #
     # for i,prediction in enumerate(decision_tree_classifier_pred):
-    #     if test_data_frame['Class'][i] != prediction:
-    #         print(test_data_frame['Word'][i])
+    #     if test_data_frame['Class'][i] != prediction and prediction==1:
+    #         print(str(prediction) + " " + test_data_frame['Word'][i])
