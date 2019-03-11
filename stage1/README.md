@@ -1,5 +1,8 @@
 # [Location Extractor from Text Documents](https://sites.google.com/view/data-science-project/home)
 
+## Stage 1 WebPage 
+[https://sites.google.com/view/data-science-project/home/stage-1](https://sites.google.com/view/data-science-project/home/stage-1)
+
 ## Approach
 1. Collected 300 text documents containing well-formed sentences. Documents contain only plain text in English.
 2. Decided LOCATIONs as the entity type which we will extract from these documents.
