@@ -1,5 +1,4 @@
-# Entire DataSet for Training and Testing
-### [Project Page](https://sites.google.com/view/data-science-project/home)
+# [Location Extractor from Text](https://sites.google.com/view/data-science-project/home)
 
 ## Entity Type
 * Location
@@ -16,6 +15,9 @@
 ### Negatives
 1. _Brooklyn_ High School
 2. The _United States_ attorney
+
+## Project Website
+[https://sites.google.com/view/data-science-project/home](https://sites.google.com/view/data-science-project/home)
 
 ## Authors
 

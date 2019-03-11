@@ -1,5 +1,7 @@
-# Stage 1 (Location Extractor from Text)
-### [Project Page](https://sites.google.com/view/data-science-project/home)
+# [Location Extractor from Text](https://sites.google.com/view/data-science-project/home)
+
+## Project Website
+[https://sites.google.com/view/data-science-project/home](https://sites.google.com/view/data-science-project/home)
 
 ## Authors
 
