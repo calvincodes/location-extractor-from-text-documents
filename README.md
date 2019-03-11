@@ -3,9 +3,15 @@
 
 ## Setup & Requirements
 
+```shell
 pip3 install -r requirements.txt
-python3 driver.py
+```
 
+## Running the project
+
+```shell
+python3 driver.py
+```
 
 ## Authors
 
