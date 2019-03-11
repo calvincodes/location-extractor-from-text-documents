@@ -9,7 +9,8 @@ from scikit_helper import run_testing_phase
 data_set_directory = 'data_set/'
 dirname = os.path.dirname(__file__)
 
-file_number_range = range(0, 422)
+train_data_range = range(0, 422)  # The directory has only 200 files and the code tries to read file only if present.
+test_data_range = range(0, 422)  # The directory has only 100 files and the code tries to read file only if present.
 
 global_data_frames = []
 global_test_data_frames = []
@@ -23,7 +24,8 @@ pos_count = 0
 
 def read_and_process_data(data_type):
 
-    for file_no in file_number_range:
+    data_range = train_data_range if data_type == 'train' else test_data_range
+    for file_no in data_range:
 
         # Step 1: Create absolute path for the file and check if the file exists.
         filename = os.path.join(dirname, data_set_directory + "/" + data_type + "/" + str(file_no) + ".txt")
