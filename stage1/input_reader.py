@@ -2,7 +2,7 @@ import re
 
 
 def read_file(filename):
-    stream = open(filename, "r")
+    stream = open(filename, encoding="utf8")
     raw_data_set = stream.read()
     re.sub(' +', ' ', raw_data_set)  # Convert all multiple spaces to single.
     raw_data_list = raw_data_set.split()

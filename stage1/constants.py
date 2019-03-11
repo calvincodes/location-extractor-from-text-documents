@@ -5,7 +5,8 @@ neighboring_verbs_for_negative_examples = ['has', 'have', 'had', 'was', 'were', 
                                            'of', 'times', 'post', 'against', 'should', 'will', 'wont',
                                            'not', 'do', 'does']
 
-blacklist_words = ['january', 'february', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October',
+blacklist_words = ['january', 'february', 'March',
+                   'April', 'May', 'June', 'July', 'August', 'September', 'October',
                    'November', 'December', 'Mr.', 'Trump']
 
 possible_strong_prev_words = ['of', 'at', 'between', 'neighbouring', 'into', 'from',
