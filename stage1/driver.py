@@ -5,6 +5,7 @@ from feature_vector_converter import convert_examples_to_feature_vectors
 from data_frame_converter import generate_data_frame
 from scikit_helper import run_training_phase
 from scikit_helper import run_testing_phase
+import nltk
 
 data_set_directory = 'data_set/'
 dirname = os.path.dirname(__file__)
@@ -61,6 +62,9 @@ def read_and_process_data(data_type):
             global_test_data_frames.extend(positive_data_frames)
             global_test_data_frames.extend(negative_data_frames)
 
+
+print("Attempting to download wordnet if out-of-date!")
+nltk.download('wordnet')  # Attempt to download wordnet corpus.
 
 read_and_process_data('train')
 read_and_process_data('test')
