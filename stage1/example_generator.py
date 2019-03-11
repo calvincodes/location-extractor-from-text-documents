@@ -13,11 +13,6 @@ def generate_examples(word_list):
 
     for i, word in enumerate(word_list):
 
-        # TODO: Remove this commented redundant code post confirmation.
-        # We should NOT be needing these. We have not tagged this.
-        # word = re.sub("\'s", "", word)
-        # word = re.sub("\’s", "", word)
-
         # As "loc" can commonly occur even in normal words like al'loc'ation, hence checking for presence of <loc>
         if '<loc>' in word:
             # For the same reason as above, explicitly checking for one occurrence of both opening and closing tags.
