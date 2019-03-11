@@ -1,13 +1,17 @@
-Entity Type used: Location
+# Entire DataSet for Training and Testing
 
-Tag Description: locations are marked up in the documents using <loc>....</loc> tags.
+## Entity Type
+* Location
 
-Tag Examples:
+## Tag Description
+* Locations are marked up in the documents using **\<loc\>....\</loc\>** tags.
 
-Positives
-1. <loc>India</loc>
-2. <loc>United States</loc>
+## Tag Examples
 
-Negatives
-1. Brooklyn High School
-2. The United States attorney
+### Positives
+1. \<loc\>India\</loc\>
+2. \<loc\>United States\</loc\>
+
+### Negatives
+1. _Brooklyn_ High School
+2. The _United States_ attorney
