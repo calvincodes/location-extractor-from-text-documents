@@ -9,8 +9,7 @@ from scikit_helper import run_testing_phase
 data_set_directory = 'data_set/'
 dirname = os.path.dirname(__file__)
 
-train_data_range = range(111, 422)
-test_data_range = range(0, 110)
+file_number_range = range(0, 422)
 
 global_data_frames = []
 global_test_data_frames = []
@@ -24,8 +23,7 @@ pos_count = 0
 
 def read_and_process_data(data_type):
 
-    data_range = train_data_range if data_type == 'train' else test_data_range
-    for file_no in data_range:
+    for file_no in file_number_range:
 
         # Step 1: Create absolute path for the file and check if the file exists.
         filename = os.path.join(dirname, data_set_directory + "/" + data_type + "/" + str(file_no) + ".txt")
